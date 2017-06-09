@@ -5,7 +5,7 @@
 
 from flask import Flask
 from flask import render_template
-from getdata import get_stations, get_stations_by_zipcode, count_station_ownership
+from foo.getdata import get_stations, get_stations_by_zipcode, count_station_ownership
 
 
 app = Flask(__name__)
