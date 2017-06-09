@@ -5,31 +5,24 @@
 
 from flask import Flask
 from flask import render_template
+from foo.getdata import get_stations, get_stations_by_zipcode, count_station_ownership
+
+
 app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    template = 'index.html'
-    return render_template(template)
+    stations = get_stations()
+    return render_template('index.html', stations=stations)
 
-@app.route("/hello/<name>")
-def hello(name):
-    return "Hello, <strong>{}!</strong>".format(name)
+@app.route("/zip/<zipcode>")
+def zippage(zipcode):
+    stations = get_stations_by_zipcode(zipcode)
+    return render_template('zip.html',
+        stations=stations, zipcode=zipcode, ownership_count=count_station_ownership(stations))
 
-@app.route("/cage/<width>/<height>")
-def placecage(width=400, height=400):
-    templatetext = """
-    <p>
-        This is a hotlinked {w}x{h} picture of Nicolas Cage
-        from
-        <a href="http//placecage.com">placecage.com</a>:
-    </p>
-    <img src="http://placecage.com/{w}/{h}" alt="placecage">
-    """
-
-    return templatetext.format(w=width, h=height)
 
 
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug=True, use_reloader=True)
