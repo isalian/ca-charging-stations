@@ -9,6 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     template = 'index.html'
+    return template
 
 @app.route("/hello/<name>")
 def hello(name):
