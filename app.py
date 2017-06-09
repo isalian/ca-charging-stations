@@ -8,7 +8,7 @@ app = Flask(__name__)
 
 @app.route("/")
 def homepage():
-    return "Hello Cody to my <strong>homepage</strong>!"
+    template = 'index.html'
 
 @app.route("/hello/<name>")
 def hello(name):
