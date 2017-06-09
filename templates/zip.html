@@ -45,7 +45,7 @@
       <tbody>
         {% for station in stations %}
           <tr>
-            <td>{{ station.station_name }}</td>
+            <td><a href="/station/{{station.id}}"> {{ station.station_name }}</a></td>
             <td>{{ station.address}}</td>
             <td>{{ station.groups_with_access_code }}</td>
             <td>{{ "${:}".format(station.median_household_income | int) }}</td>

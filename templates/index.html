@@ -27,9 +27,9 @@
   Select a zip code:
 
   <ul>
-      <li><a href="/zip/90012">90012</a></li>
-      <li><a href="/zip/90210">90210</a></li>
-      <li><a href="/zip/95051">95051</a></li>
+  {% for z in zipcodes %}
+    <li><a href="/zip/{{z}}">{{z}}</a></li>
+  {%endfor%}
   </ul>
 
 

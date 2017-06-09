@@ -4,6 +4,12 @@ import csv
 DATA_DIR = join('static', 'data')
 DATA_FILENAME = join(DATA_DIR, 'altfuelslim.csv')
 
+def get_zipcodes():
+    zipcodes = []
+    stations= get_stations()
+    for s in stations:
+        zipcodes.append(s['zipcode'])
+    return list(set(zipcodes))
 
 def get_stations():
     with open(DATA_FILENAME) as f:
@@ -30,5 +36,10 @@ def count_station_ownership(stations):
             thecount['Private'] += 1
 
     return thecount
+
+def get_station_by_id(idval):
+    for st in get_stations():
+        if station['id'].strip()==idval:
+            return station
 
 
