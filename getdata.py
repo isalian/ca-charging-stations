@@ -11,13 +11,6 @@ def get_zipcodes():
         zipcodes.append(s['zipcode'])
     return list(set(zipcodes))
 
-def get_zipcodes():
-    zipcodes = []
-    stations = get_stations()
-    for s in stations:
-        zipcodes.append(s['zipcode'])
-    return list(set(zipcodes))
-
 def get_stations():
     with open(DATA_FILENAME) as f:
         data = list(csv.DictReader(f))
