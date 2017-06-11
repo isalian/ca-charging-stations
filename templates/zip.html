@@ -7,14 +7,15 @@
      <script src = "/static/js/jquery-3.2.1.min.js"></script>
      <script src = "/static/js/bootstrap.min.js"></script>
       <style>
-        body { background: honeydew !important; }
+        body { background: honeydew !important; padding-top: 20px; }
       </style>
 </head>
 
 <body>
     <header>
 <div class="container" align="right">
-  <button onclick="goBack()">Return to homepage</button>
+  <button onclick="goBack()" class="btn btn-primary"><span class="glyphicon glyphicon-home"></span> Return to homepage
+  </button>
     <script>
       function goBack() {
        window.history.back();

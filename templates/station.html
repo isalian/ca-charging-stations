@@ -7,14 +7,21 @@
      <script src = "/static/js/jquery-3.2.1.min.js"></script>
      <script src = "/static/js/bootstrap.min.js"></script>
       <style>
-        body { background: honeydew !important; }
+        body { background: honeydew !important; padding-top: 20px; }
+        img { float:left; }
+        table { display: block; }
+        .panel 
+{
+    margin-top:100px;
+    margin-left: 515px; 
+}
       </style>
 </head>
 
 <body>
     <header>
       <div class="container" align="right">
-  <button onclick="goBack()">Return to zip code page</button>
+  <button onclick="goBack()" class="btn btn-primary"><span class="glyphicon glyphicon-menu-left"></span> Return to zip code page</button>
     <script>
       function goBack() {
        window.history.back();
@@ -26,13 +33,33 @@
       <h3><strong><em>{{ station.address }}</strong></em></h3>
   </div>
   <div class="container">
+    <div>
   <img src="https://maps.googleapis.com/maps/api/streetview?location={{ station.address }}&size=500x500" alt="">
+  </div>
+  <div class="panel panel-primary">
+  <div class="panel-heading">Station Details</div>
+  <table class="table">
+    <tr>
+    <th>Owner type</th>
+    <td>{{ station.groups_with_access_code }}</td>
+  </tr>
+  <tr>
+    <th>Phone Number</th>
+    <td>{{ station.station_phone}}</td>
+  </tr>
+  <tr>
+    <th>Hours</th>
+    <td>{{ station.access_days_time}}</td>
+  </tr>
+  </table>
   </div>
 </body>
 <footer>
+<nav class="navbar navbar-default navbar-fixed-bottom">
   <div class="container">
     <h3>About</h3>
     <p>Created by Isha Salian for <a href="http://journalism.stanford.edu" target="_blank">Stanford Journalism</a> class <a href="http://2017.compjour.org/" target="_blank">COMM 277A: Computational Journalism</a>, taught by <a href="https://comm.stanford.edu/faculty-nguyen/">Dan Nguyen.</a></p>
   </div>
+</nav>
 </footer>
 </html>
