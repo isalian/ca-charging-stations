@@ -13,7 +13,7 @@ app = Flask(__name__)
 @app.route("/")
 def homepage():
     stations = get_stations()
-    return render_template('index.html', stations=stations, zipcodes=get_zipcodes)
+    return render_template('index.html', stations=stations, zipcodes=get_zipcodes())
 
 @app.route("/zip/<zipcode>")
 def zippage(zipcode):
