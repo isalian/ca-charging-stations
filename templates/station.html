@@ -13,17 +13,17 @@
 
 <body>
     <header>
-      <div class="container">
-      <h1><strong>Station {{ station.id }}</strong></h1>
-      <h3><strong><em>{{ station.address }}</strong></em></h3>
-  </div>
-  <div class="container" align="right">
+      <div class="container" align="right">
   <button onclick="goBack()">Return to zip code page</button>
     <script>
       function goBack() {
        window.history.back();
      }
     </script>
+  </div>
+      <div class="container">
+      <h1><strong>Station {{ station.id }}</strong></h1>
+      <h3><strong><em>{{ station.address }}</strong></em></h3>
   </div>
   <div class="container">
   <img src="https://maps.googleapis.com/maps/api/streetview?location={{ station.address }}&size=500x500" alt="">

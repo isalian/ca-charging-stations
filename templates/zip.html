@@ -13,6 +13,14 @@
 
 <body>
     <header>
+<div class="container" align="right">
+  <button onclick="goBack()">Return to homepage</button>
+    <script>
+      function goBack() {
+       window.history.back();
+     }
+    </script>
+  </div>
       <div class="container">
         <h1><strong>There are {{ stations | length }} electric vehicle charging stations
         for  zip code {{ zipcode }}:</strong></h1>

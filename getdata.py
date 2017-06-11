@@ -32,6 +32,10 @@ def get_station_by_id(idval):
         if station['id'].strip() == idval:
             return station
 
+# def get_station_address(station):
+#     for station in get_station_by_id(idval):
+#         loc= station['address'].split()
+#         return "+".join(loc)
 
 def count_station_ownership(stations):
     thecount = {'Private': 0, 'Public': 0}
