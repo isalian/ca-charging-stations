@@ -44,10 +44,3 @@ def count_station_ownership(stations):
             thecount['Private'] += 1
 
     return thecount
-
-def get_station_by_id(idval):
-    for st in get_stations():
-        if station['id'].strip()==idval:
-            return station
-
-
