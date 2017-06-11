@@ -6,13 +6,16 @@
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
      <script src = "/static/js/jquery-3.2.1.min.js"></script>
      <script src = "/static/js/bootstrap.min.js"></script>
+      <style>
+        body { background: honeydew !important; }
+      </style>
 </head>
 
 <body>
     <header>
       <div class="container">
-        <h1>There are {{ stations | length }} electric vehicle charging stations
-        for  zip code {{ zipcode }}</h1>
+        <h1><strong>There are {{ stations | length }} electric vehicle charging stations
+        for  zip code {{ zipcode }}:</strong></h1>
       </div>
     </header>
 
