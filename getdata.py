@@ -4,6 +4,11 @@ import csv
 DATA_DIR = join('static', 'data')
 DATA_FILENAME = join(DATA_DIR, 'altfuelslim.csv')
 
+def read_googlemaps_creds():
+    creds_filename = join('static', 'utils', 'creds_googlemaps.txt')
+    keytext = open(creds_filename).read().strip()
+    return keytext
+
 def get_zipcodes():
     zipcodes = []
     stations= get_stations()

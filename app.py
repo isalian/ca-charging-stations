@@ -5,7 +5,7 @@
 
 from flask import Flask
 from flask import render_template
-from getdata import get_stations, get_stations_by_zipcode, count_station_ownership, get_station_by_id, get_zipcodes
+from getdata import get_stations, get_stations_by_zipcode, count_station_ownership, get_station_by_id, get_zipcodes, read_googlemaps_creds
 
 app = Flask(__name__)
 
@@ -23,7 +23,7 @@ def zippage(zipcode):
 @app.route("/station/<idval>")
 def stationpage(idval):
 	station = get_station_by_id(idval)
-	return render_template('station.html', station=station)
+	return render_template('station.html', station=station, key=read_googlemaps_creds())
  
 
 if __name__ == "__main__":
